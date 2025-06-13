@@ -1,0 +1,26 @@
+{
+  "name": "playwright_home",
+  "version": "1.0.0",
+  "description": "Playwright_Home",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndriiBatishchev/Playwright_Home.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndriiBatishchev/Playwright_Home/issues"
+  },
+  "homepage": "https://github.com/AndriiBatishchev/Playwright_Home#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.53.0",
+    "@types/node": "^24.0.1"
+  }
+}
