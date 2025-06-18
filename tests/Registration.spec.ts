@@ -452,13 +452,15 @@ test.describe('Sign in test', () => {
             });
         });
 
-        test('Without Re-enter password', async () => {
+        test('Check "Registration" field> Valid value', async ({ page }) => {
             await nameField.fill(userList.userForRegistration.name);
             await lastNameField.fill(userList.userForRegistration.last_name);
             await emailField.fill(email_gen);
             await passwordField.fill(userList.userForRegistration.password);
             await rePasswordField.fill(userList.userForRegistration.re_password);
             await expect(registerButton).not.toBeDisabled();
+            await registerButton.click();
+            await expect(page.locator('h1', { hasText: 'Garage' })).toBeVisible();
 
 
         });
