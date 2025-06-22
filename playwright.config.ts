@@ -1,12 +1,15 @@
+require('dotenv').config();
 import { defineConfig, devices } from '@playwright/test';
-
+// import * as dotenv from 'dotenv';
+// dotenv.config({ path: '.env' });
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// import dotenv from 'dotenv';
+//import dotenv from 'dotenv';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
+
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -33,11 +36,20 @@ export default defineConfig({
     trace: 'on',
     video: 'on',
     screenshot: 'on',
-    baseURL: 'https://qauto.forstudy.space/',
+
+    // baseURL: 'https://qauto.forstudy.space/',
+    // httpCredentials: {
+    //   'username': 'guest',
+    //   'password': 'welcome2qauto'
+    // },
+    ////////
+    baseURL: process.env.BASE_URL,
     httpCredentials: {
-      'username': 'guest',
-      'password': 'welcome2qauto'
+      'username': process.env.HTTP_CREDENTIALS_USERNAME!, 
+      'password': process.env.HTTP_CREDENTIALS_PASSWORD! 
     },
+    //////
+    /////
     headless: false, // ← запускає браузер з вікном
   },
 
