@@ -10,4 +10,5 @@ export const userList = {
         password: '1234567890aA',
         re_password: '1234567890aA'
     }
+    
 }
