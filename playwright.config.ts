@@ -1,4 +1,11 @@
-require('dotenv').config();
+//Використовую
+import * as dotenv from 'dotenv';
+import * as path from 'path';
+dotenv.config({ path: path.resolve(__dirname, '.env') });
+
+//Замість
+//require('dotenv').config();
+
 import { defineConfig, devices } from '@playwright/test';
 // import * as dotenv from 'dotenv';
 // dotenv.config({ path: '.env' });
