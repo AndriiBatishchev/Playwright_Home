@@ -100,5 +100,24 @@ export default class GaragePage extends BasePage {
     async verifyCarUpdatedAlertVisible() {
         await expect(this.alertUpdatedCar).toBeVisible();
     }
+
+    //Profile tab
+    public readonly textProfile: Locator = this.page.locator('h1', { hasText: 'Profile' });
+    public readonly textNameProfile: Locator = this.page.locator('//p[contains(@class, "profile_name display-4")]');
+
+
+    async verifyProfilePageOpen(): Promise<void> {
+        await expect(this.textProfile).toBeVisible();
+    }
+
+    async openProfile(): Promise<any> {
+        await this.page.goto('/panel/profile');
+    }
+
+    async verifyNameProfile(expectedNametext: string = 'Stanislav Taran') {
+        //async verifyNameProfile(expectedNametext: string): Promise<void> {
+        await expect(this.textNameProfile).toHaveText(expectedNametext);
+    }
+
 }
 
