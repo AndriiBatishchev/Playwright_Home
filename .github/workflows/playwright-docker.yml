@@ -1,4 +1,4 @@
-name: Playwright tests via Docker
+name: Playwright Tests via Report
 
 on: workflow_dispatch
 
@@ -16,8 +16,8 @@ jobs:
           context: .
           file: Dockerfile
           push: false # Set to true if you want to push the image to a container registry
-          tags: your-image-tag:latest
+          tags: AQA-tag:latest
 
       - name: Run tests
         run: |
-          docker run your-image-tag:latest
+          docker run AQA-tag:latest
