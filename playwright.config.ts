@@ -47,7 +47,7 @@ export default defineConfig({
     // },
     //////
     /////
-    headless: false, // ← запускає браузер з вікном
+    headless: true, // ← запускає браузер з вікном
   },
 
   /* Configure projects for major browsers */
